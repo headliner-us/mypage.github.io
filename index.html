@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projektowy HUB</title>
+</head>
+<body>
+    <h1>Projektowy HUB</h1>
+        <p>Strona zaprojektowana w celu uporządkowania projektów będącymi rozwiązaniami przydzielonych zadań.</p>
+        <p>Wybierz przycisk poniżej w celu przekierowania na odpowiednią podstronę.</p>
+    <button onclick="przekierowanie1()">Podstrona 1</button>
+
+    <script>
+        function przekierowanie1() {
+            window.location.href = 'podstrona1.html';
+        }
+    </script>
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: transparent;
+            color: black;
+            text-align: center;
+        }
+</style>
+    <div class="footer">
+  <p>psst... ta strona nie miała być ładna - ma tylko pełnić swoją funkcję</p>
+      <p id="clock" style="font-size: 14px; font-family: monospace;"></p>
+      <script>
+        function updateClock() {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+
+            let zegar = document.getElementById("clock")
+            zegar.textContent = date + " " + time;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+      </script>
+</div>
+</body>
+</html>
